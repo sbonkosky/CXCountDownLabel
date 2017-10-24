@@ -11,7 +11,7 @@
 
 @class CXCountDownLabel;
 
-typedef void (^CXCountDownHandler)(CXCountDownLabel *label, NSInteger currentNumber, BOOL stopped);
+//typedef void (^CXCountDownHandler)(CXCountDownLabel *label, NSInteger currentNumber, BOOL stopped);
 
 @interface CXCountDownLabel : UILabel
 
@@ -20,7 +20,8 @@ typedef void (^CXCountDownHandler)(CXCountDownLabel *label, NSInteger currentNum
 @property (nonatomic, strong, readonly) NSNumberFormatter *numberFormatter;
 @property (nonatomic, strong, readonly) CADisplayLink *countDownTimer;
 @property (nonatomic, assign) NSUInteger countInterval; // default is 0. when it is 0, use sqrtf(endNumber - startNumber) which is faster.
-- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber countDownHandeler:(CXCountDownHandler)countDownHandeler;
+//- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber countDownHandeler:(CXCountDownHandler)countDownHandeler;
+- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber;
 
 - (void)start;
 - (void)pause;

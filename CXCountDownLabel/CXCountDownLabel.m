@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic, assign) NSInteger currentNumber;
-@property (nonatomic, copy) CXCountDownHandler countDownHandeler;
+//@property (nonatomic, copy) CXCountDownHandler countDownHandeler;
 
 - (void)countDown;
 
@@ -48,13 +48,14 @@
     return self;
 }
 
-- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber countDownHandeler:(CXCountDownHandler)countDownHandeler
+//- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber countDownHandeler:(CXCountDownHandler)countDownHandeler
+- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber
 {
-    NSParameterAssert(startNumber != endNumber);
+    //NSParameterAssert(startNumber != endNumber);
     self.startNumber = startNumber;
     self.endNumber = endNumber;
     self.currentNumber = startNumber;
-    self.countDownHandeler = countDownHandeler;
+    //self.countDownHandeler = countDownHandeler;
     
     self.text = [self.numberFormatter stringFromNumber:[NSNumber numberWithInteger:_currentNumber]];
 }
@@ -98,9 +99,9 @@
 - (void)start
 {
     if (_currentNumber == _endNumber) {
-        if (self.countDownHandeler) {
-            self.countDownHandeler(self,_currentNumber,YES);
-        }
+        //if (self.countDownHandeler) {
+        //    self.countDownHandeler(self,_currentNumber,YES);
+        //}
         return;
     }
     
@@ -115,9 +116,9 @@
 - (void)pause
 {
     _countDownTimer.paused = YES;
-    if (self.countDownHandeler) {
-        self.countDownHandeler(self,_currentNumber,YES);
-    }
+    //if (self.countDownHandeler) {
+    //    self.countDownHandeler(self,_currentNumber,YES);
+    //}
 }
 
 - (void)resume
@@ -141,14 +142,16 @@
     
     self.text = [self.numberFormatter stringFromNumber:[NSNumber numberWithInteger:_currentNumber]];
     
-    if (self.countDownHandeler) {
-        self.countDownHandeler(self,_currentNumber,(_currentNumber == _endNumber));
-    }
+    //if (self.countDownHandeler) {
+    //    self.countDownHandeler(self,_currentNumber,(_currentNumber == _endNumber));
+    //}
     
+	/*
     if (_currentNumber == _endNumber) {
         [_countDownTimer invalidate];
         _countDownTimer = nil;
     }
+	*/
 }
 
 @end
