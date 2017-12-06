@@ -26,6 +26,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _divideByHundred = NO;
         _numberFormatter = [NSNumberFormatter new];
         _numberFormatter.numberStyle = NSNumberFormatterNoStyle;
         _countInterval = 0;
@@ -140,7 +141,11 @@
 
     self.currentNumber = _ascending ? _currentNumber + c : _currentNumber - c;
     
-    self.text = [self.numberFormatter stringFromNumber:[NSNumber numberWithInteger:_currentNumber]];
+    //self.text = [self.numberFormatter stringFromNumber:[NSNumber numberWithInteger:_currentNumber]];
+    if(_divideByHundred)
+        self.text = [NSString stringWithFormat:@"%.02f", (float)_currentNumber/100 ];
+    else
+        self.text = [NSString stringWithFormat:@"%i",_currentNumber];
     
     //if (self.countDownHandeler) {
     //    self.countDownHandeler(self,_currentNumber,(_currentNumber == _endNumber));

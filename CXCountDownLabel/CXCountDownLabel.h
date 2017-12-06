@@ -15,6 +15,7 @@
 
 @interface CXCountDownLabel : UILabel
 
+@property (nonatomic) BOOL divideByHundred;
 @property (nonatomic, assign) NSInteger startNumber;
 @property (nonatomic, assign) NSInteger endNumber;
 @property (nonatomic, strong, readonly) NSNumberFormatter *numberFormatter;
