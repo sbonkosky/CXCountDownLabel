@@ -59,6 +59,13 @@
     //self.countDownHandeler = countDownHandeler;
     
     self.text = [self.numberFormatter stringFromNumber:[NSNumber numberWithInteger:_currentNumber]];
+    
+    [self start];
+}
+
+- (void)setNumber:(NSInteger)number
+{
+    [self setStartNumber:self.endNumber endNumber:number];
 }
 
 #pragma mark - setter / getter

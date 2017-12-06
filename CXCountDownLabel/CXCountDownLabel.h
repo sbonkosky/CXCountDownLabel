@@ -23,6 +23,7 @@
 @property (nonatomic, assign) NSUInteger countInterval; // default is 0. when it is 0, use sqrtf(endNumber - startNumber) which is faster.
 //- (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber countDownHandeler:(CXCountDownHandler)countDownHandeler;
 - (void)setStartNumber:(NSInteger)startNumber endNumber:(NSInteger)endNumber;
+- (void)setNumber:(NSInteger)number;
 
 - (void)start;
 - (void)pause;
